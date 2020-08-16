@@ -110,7 +110,7 @@ namespace UnityEngine.XR.ARFoundation.Samples
         void UpdateText()
         {
             if (text != null)
-                text.text = "MODEL SCALE: " + scale;
+                text.text = "MODEL SCALE: " + Mathf.Abs(2000 - scale);
         }
 
         ARSessionOrigin m_SessionOrigin;

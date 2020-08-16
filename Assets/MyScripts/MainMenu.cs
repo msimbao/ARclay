@@ -13,11 +13,15 @@ public class MainMenu : MonoBehaviour
     public void StartAR()
     {
         // SceneManager.LoadScene("AR");
-        StartCoroutine(LoadAsynchronously("AR"));
+        StartCoroutine(LoadAsynchronously("Full"));
     }
-    public void StartXR()
+    public void StartStarter()
     {
-        StartCoroutine(LoadAsynchronously("XR"));
+        StartCoroutine(LoadAsynchronously("Starter"));
+    }
+     public void StartSmall()
+    {
+        StartCoroutine(LoadAsynchronously("Small"));
     }
     public void QuitGame()
     {
@@ -32,6 +36,22 @@ public class MainMenu : MonoBehaviour
     {
         FindObjectOfType<AudioManager>().Play("Button");
     }
+      public void SoundEffectOne()
+    {
+        FindObjectOfType<AudioManager>().Play("EffectOne");
+    }
+        public void SoundEffectTwo()
+    {
+        FindObjectOfType<AudioManager>().Play("EffectTwo");
+    }
+        public void SoundEffectThree()
+    {
+        FindObjectOfType<AudioManager>().Play("EffectThree");
+    }
+            public void SoundEffectFour()
+    {
+        FindObjectOfType<AudioManager>().Play("EffectFour");
+    }
             public void BackButtonPressed()
     {
             SceneManager.LoadScene("Menu", LoadSceneMode.Single);
@@ -40,7 +60,7 @@ public class MainMenu : MonoBehaviour
 
     IEnumerator LoadAsynchronously (string name)
     {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(name);
+        AsyncOperation operation = SceneManager.LoadSceneAsync(name, LoadSceneMode.Single);
         
         loadingScreen.SetActive(true);
         while (!operation.isDone)

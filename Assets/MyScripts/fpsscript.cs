@@ -17,7 +17,7 @@
  
          private void Start()
          {
-             Application.targetFrameRate = 60;
+             Application.targetFrameRate = 120;
 
              m_FpsNextPeriod = Time.realtimeSinceStartup + fpsMeasurePeriod;
              m_Text = GetComponent<Text>();

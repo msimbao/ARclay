@@ -147,6 +147,9 @@ public class MarchingCubes
         _mesh.SetTriangles(_triangles, 0);
         _mesh.RecalculateNormals();
 
+        // int[] subdivision = new int[] {0,2,3,4,6,8,9,12,16,18,24};
+
+        // MeshHelper.Subdivide(_mesh, subdivision[1]);
 
         // Vector3[] _normals = _mesh.normals;
         // for(int n = 0; n < _vertices.Length; n++){

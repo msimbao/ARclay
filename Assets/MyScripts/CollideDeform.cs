@@ -9,6 +9,7 @@ public class CollideDeform : MonoBehaviour
     public Transform camera;
     public bool editTerrain;
     public bool mirror;
+    public bool clayMode;
     // Start is called before the first frame update
     
     private ManoGestureContinuous grab;
@@ -50,23 +51,25 @@ public class CollideDeform : MonoBehaviour
         if (ManomotionManager.Instance.Hand_infos[0].hand_info.gesture_info.mano_gesture_continuous == point)
             {
             editTerrain = false;
-            FindObjectOfType<AudioManager>().Play("Swell");
+            // FindObjectOfType<AudioManager>().Play("Swell");
             renderer.sharedMaterial = arSphereMaterial[1];
             
+            if (clayMode) {
             myEditor.EditTerrain(transform.position, editTerrain, myEditor.force, myEditor.range);
             if (mirror) myEditor.EditTerrain(myMirror, editTerrain, myEditor.force, myEditor.range);
-            
+            }
 
             }
         else if (ManomotionManager.Instance.Hand_infos[0].hand_info.gesture_info.mano_gesture_continuous == pinch)
             {
             editTerrain = true;
-            FindObjectOfType<AudioManager>().Play("Swell");
+            // FindObjectOfType<AudioManager>().Play("Swell");
             renderer.sharedMaterial = arSphereMaterial[2];
 
+            if (clayMode) {
             myEditor.EditTerrain(transform.position, editTerrain, myEditor.force, myEditor.range);
             if (mirror) myEditor.EditTerrain(myMirror, editTerrain, myEditor.force, myEditor.range);
-            
+            }
 
             } 
     }

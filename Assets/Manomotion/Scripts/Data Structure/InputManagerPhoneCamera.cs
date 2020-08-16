@@ -17,6 +17,7 @@ public class InputManagerPhoneCamera : InputManagerBaseClass
 	WebCamDevice[] webCamDevices;
 	WebCamTexture backFacingCamera;
 	public ManoMotionFrame currentManoMotionFrame;
+	Color32[] data;
 
 	#endregion
 
@@ -44,6 +45,7 @@ public class InputManagerPhoneCamera : InputManagerBaseClass
 
 			backFacingCamera = new WebCamTexture(webCamDevices[0].name, STARTING_WIDTH, STARTING_HEIGHT);
 			backFacingCamera.Play();
+			data = new Color32[backFacingCamera.width * backFacingCamera.height];
 		}
 
 		if (!backFacingCamera)

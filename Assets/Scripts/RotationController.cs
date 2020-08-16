@@ -105,7 +105,7 @@ namespace UnityEngine.XR.ARFoundation.Samples
         void UpdateText()
         {
             if (m_Text != null)
-                m_Text.text = "Rotation: " + angle + " degrees";
+                m_Text.text = "MODEL ROTATION: " + (Mathf.FloorToInt(angle)) + " degrees";
         }
     }
 }

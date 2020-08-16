@@ -10,7 +10,7 @@
     public float CalculateDensity(int worldPosX, int worldPosY, int worldPosZ)
     {
         // return SphereDensity(worldPosX, worldPosY, worldPosZ, 5).Clamp01();
-        return SphereDensity(worldPosX, worldPosY, worldPosZ, 5);
+        return SphereDensity(worldPosX, worldPosY, worldPosZ, 0);
 
     }
 

@@ -97,6 +97,11 @@ public class CollideController : MonoBehaviour
             myBrush.mirror = !myBrush.mirror;
             Debug.Log("Mirror Toggled");
         }
+
+        public void setClay (bool clayValue){
+            myBrush.clayMode = !myBrush.clayMode;
+            Debug.Log("Clay Toggled");
+        }
         public CollideDeform myBrush;
         public TerrainEditor myEditor;
 

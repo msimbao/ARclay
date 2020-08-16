@@ -290,7 +290,7 @@ public class ManomotionManager : ManomotionBase
     {
         manomotion_session = new Session();
         manomotion_session.orientation = ManoUtils.Instance.currentOrientation;
-        manomotion_session.smoothing_controller = 0.60f;
+        manomotion_session.smoothing_controller = 0.65f;
         manomotion_session.gesture_smoothing_controller = 0.70f;
         manomotion_session.enabled_features.pinch_poi = 1;
     }
