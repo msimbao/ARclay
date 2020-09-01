@@ -24,7 +24,7 @@ mail.Subject = "AR Clay - Your Newly Sculpted Model";
 mail.Body = "Hello! \n Please Find Attached the model you just made with AR CLAY \n Thank you for using our service and please let us know how we can make it better for your \n Enjoy Your Day!";
  
 System.Net.Mail.Attachment attachment;
-string path = Application.persistentDataPath + "/Export.obj";
+string path = Application.persistentDataPath + "/Export.fbx";
 attachment = new System.Net.Mail.Attachment(path);
 mail.Attachments.Add(attachment);
  

@@ -10,14 +10,14 @@ public class MainMenu : MonoBehaviour
     public GameObject loadingScreen;
     public Slider slider;
     // Start is called before the first frame update
-    public void StartAR()
+    public void StartSolids()
     {
         // SceneManager.LoadScene("AR");
-        StartCoroutine(LoadAsynchronously("Full"));
+        StartCoroutine(LoadAsynchronously("Solids"));
     }
     public void StartStarter()
     {
-        StartCoroutine(LoadAsynchronously("Starter"));
+        // StartCoroutine(LoadAsynchronously("Starter"));
     }
      public void StartSmall()
     {
@@ -32,26 +32,26 @@ public class MainMenu : MonoBehaviour
     {
         FindObjectOfType<AudioManager>().Play("Back");
     }
-    public void PressButton()
-    {
-        FindObjectOfType<AudioManager>().Play("Button");
-    }
-      public void SoundEffectOne()
-    {
-        FindObjectOfType<AudioManager>().Play("EffectOne");
-    }
-        public void SoundEffectTwo()
-    {
-        FindObjectOfType<AudioManager>().Play("EffectTwo");
-    }
-        public void SoundEffectThree()
-    {
-        FindObjectOfType<AudioManager>().Play("EffectThree");
-    }
-            public void SoundEffectFour()
-    {
-        FindObjectOfType<AudioManager>().Play("EffectFour");
-    }
+    // public void PressButton()
+    // {
+    //     FindObjectOfType<AudioManager>().Play("Button");
+    // }
+    //   public void SoundEffectOne()
+    // {
+    //     FindObjectOfType<AudioManager>().Play("EffectOne");
+    // }
+    //     public void SoundEffectTwo()
+    // {
+    //     FindObjectOfType<AudioManager>().Play("EffectTwo");
+    // }
+    //     public void SoundEffectThree()
+    // {
+    //     FindObjectOfType<AudioManager>().Play("EffectThree");
+    // }
+    //         public void SoundEffectFour()
+    // {
+    //     FindObjectOfType<AudioManager>().Play("EffectFour");
+    // }
             public void BackButtonPressed()
     {
             SceneManager.LoadScene("Menu", LoadSceneMode.Single);

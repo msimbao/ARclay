@@ -10956,29 +10956,35 @@ PrefabInstance:
       propertyPath: m_text
       value: "Welcome to AR Clay!\n\n Your mobile clay modeling solution. We designed
         this app to help people wanting to rapidly make Low Poly models rapidly for
-        3D printing or simple props and animations. We hope you will enjoy your experience
-        and if not please let us know how we can make it better for you.\n\nPress
+        3D printing or simple props and animations.\n\nWe hope you will enjoy your
+        experience and if not please let us know how we can make it better for you.\n\nAlso
+        Thank you to icons8.com for the amazing images and iconography.\n\nPress
         Next on your screen to continue."
       objectReference: {fileID: 0}
     - target: {fileID: 2189881250060172015, guid: a9e53abb4f8af4f02bf2d98d5446797d,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 333
+      value: 404
       objectReference: {fileID: 0}
     - target: {fileID: 2189881250060172015, guid: a9e53abb4f8af4f02bf2d98d5446797d,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 63
+      value: 76
       objectReference: {fileID: 0}
     - target: {fileID: 2189881250060172015, guid: a9e53abb4f8af4f02bf2d98d5446797d,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 12
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 2189881250060172015, guid: a9e53abb4f8af4f02bf2d98d5446797d,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 61
+      value: 73
+      objectReference: {fileID: 0}
+    - target: {fileID: 2189881250060172015, guid: a9e53abb4f8af4f02bf2d98d5446797d,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: 365
       objectReference: {fileID: 0}
     - target: {fileID: 2189881250145532107, guid: a9e53abb4f8af4f02bf2d98d5446797d,
         type: 3}

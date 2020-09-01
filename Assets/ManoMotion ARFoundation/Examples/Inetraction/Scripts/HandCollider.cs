@@ -45,7 +45,7 @@ public class HandCollider : MonoBehaviour
     void Update()
     {
         tracking = ManomotionManager.Instance.Hand_infos[0].hand_info.tracking_info;
-        currentPosition = Camera.main.ViewportToWorldPoint(new Vector3(tracking.palm_center.x, tracking.palm_center.y, tracking.depth_estimation * 40f));
+        currentPosition = Camera.main.ViewportToWorldPoint(new Vector3(tracking.palm_center.x, tracking.palm_center.y, tracking.depth_estimation * 90f));
         transform.position = currentPosition;
     }
 

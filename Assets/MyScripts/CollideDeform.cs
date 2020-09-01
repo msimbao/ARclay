@@ -48,11 +48,11 @@ public class CollideDeform : MonoBehaviour
         Vector3 myMirror = transform.position;
         myMirror.x = -transform.position.x;
 
-        if (ManomotionManager.Instance.Hand_infos[0].hand_info.gesture_info.mano_gesture_continuous == point)
+        if (ManomotionManager.Instance.Hand_infos[0].hand_info.gesture_info.mano_gesture_continuous == grab)
             {
             editTerrain = false;
             // FindObjectOfType<AudioManager>().Play("Swell");
-            renderer.sharedMaterial = arSphereMaterial[1];
+            // renderer.sharedMaterial = arSphereMaterial[1];
             
             if (clayMode) {
             myEditor.EditTerrain(transform.position, editTerrain, myEditor.force, myEditor.range);
@@ -64,7 +64,7 @@ public class CollideDeform : MonoBehaviour
             {
             editTerrain = true;
             // FindObjectOfType<AudioManager>().Play("Swell");
-            renderer.sharedMaterial = arSphereMaterial[2];
+            // renderer.sharedMaterial = arSphereMaterial[2];
 
             if (clayMode) {
             myEditor.EditTerrain(transform.position, editTerrain, myEditor.force, myEditor.range);

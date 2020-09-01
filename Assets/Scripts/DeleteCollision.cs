@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class DeleteCollision : MonoBehaviour
 {
+    public MoveObject triggerList;
 
-     void OnCollisionEnter(Collision collision){
+     void OnTriggerEnter(Collider collision){
 
           if (collision.gameObject.tag == "Model") {
-              Debug.Log("What it Do Delete");
-              Destroy(collision.gameObject);
-              
+
+            // Destroy(triggerList.TriggerList[0].gameObject);
+            // Destroy(collision.gameObject);
+            // triggerList.TriggerList.Clear();
+            print("Object Deleted");
+  
           }
     }
 }

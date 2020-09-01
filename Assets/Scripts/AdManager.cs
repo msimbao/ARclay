@@ -7,7 +7,7 @@ public class AdManager : MonoBehaviour
     // Start is called before the first frame update
     IEnumerator Start()
     {
-        Advertisement.Initialize("3771005",true);
+        Advertisement.Initialize("3771005",false);
 
         while(!Advertisement.IsReady("video"))
             yield return null;

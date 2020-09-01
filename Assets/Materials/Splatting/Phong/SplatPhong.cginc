@@ -117,8 +117,8 @@ discard;
 	float attenuation = lerp(1.0, oneOverDistance, _WorldSpaceLightPos0.w); //Optimization for spot lights. This isn't needed if you're just getting started.
 	float3 lightDirection = _WorldSpaceLightPos0.xyz - input.vertex.xyz * _WorldSpaceLightPos0.w;
 
-	float3 ambientLighting = UNITY_LIGHTMODEL_AMBIENT.rgb * _Color.rgb; //Ambient component
-	float3 diffuseReflection = attenuation * _LightColor0.rgb * _Color.rgb * max(0.0, dot(normalDirection, lightDirection)); //Diffuse component
+	float3 ambientLighting = UNITY_LIGHTMODEL_AMBIENT.rgb * _Color.rgb * input.color.rgb; //Ambient component
+	float3 diffuseReflection = attenuation * _LightColor0.rgb * _Color.rgb * input.color.rgb * max(0.0, dot(normalDirection, lightDirection)); //Diffuse component
 	float3 specularReflection;
 	if (dot(input.normal, lightDirection) < 0.0) //Light on the wrong side - no specular
 	{

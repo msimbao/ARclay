@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8965581983789465404}
   - component: {fileID: 8965581983789465405}
   - component: {fileID: 8965581983789465401}
-  - component: {fileID: 8822999308852883246}
   m_Layer: 0
   m_Name: Hand Collider
   m_TagString: Untagged
@@ -111,16 +110,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentPosition: {x: 0, y: 0, z: 0}
---- !u!135 &8822999308852883246
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8965581983789465402}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}

@@ -1,34 +1,47 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿// using System.Collections;
+// using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class ObjectSpawner : MonoBehaviour
 {
-    public Transform[] prefabs;
-    public Transform objectParent;
 
-    public void SpawnCube()
-    {
-            var childObject = Instantiate(prefabs[0], new Vector3(75, 0, 0), Quaternion.identity);
-            childObject.transform.SetParent(objectParent);
+    public GameObject[] prefabs;
+    public GameObject objectParent;
+    public Image pickedColor;
+    public GameObject[] blobContainers;
+    private Metaball childMetaball;
+    private MCBlob mcBlobParent;
+    private int parentNumber;
+
+    void Start(){
+        objectParent = blobContainers[0];
+        parentNumber = 0;
     }
 
-        public void SpawnCylinder()
+    public void changeParent(int number)
     {
-            var childObject =  Instantiate(prefabs[1], new Vector3(75, 0, 0), Quaternion.identity);
-            childObject.transform.SetParent(objectParent);
+        parentNumber = number;
+        objectParent = blobContainers[number];
+
+        for(int blob = 9;blob < 15; blob++){
+            Physics.IgnoreLayerCollision(0, blob);
+        }
+        Physics.IgnoreLayerCollision(0,number+9, false);
+
     }
 
-        public void SpawnPlane()
-    {
-            var childObject = Instantiate(prefabs[2], new Vector3(75, 0, 0), Quaternion.identity);
-            childObject.transform.SetParent(objectParent);
-    }
+    public void makeShape(int prefab){
+        var childObject = Instantiate(prefabs[prefab], new Vector3(-25f,50,20f), Quaternion.identity);
+        childObject.transform.SetParent(objectParent.transform);
+        childObject.layer = parentNumber + 9;
+        childObject.transform.localScale  = new Vector3(1,1,1);
+        mcBlobParent = objectParent.GetComponent<MCBlob>();
+        childMetaball = childObject.GetComponent<Metaball>();
 
-        public void SpawnSphere()
-    {
-            var childObject = Instantiate(prefabs[3], new Vector3(75, 0, 0), Quaternion.identity);
-            childObject.transform.SetParent(objectParent);
+        childMetaball.color = pickedColor.color;
+
     }
 
 }

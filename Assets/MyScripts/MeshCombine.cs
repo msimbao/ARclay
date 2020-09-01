@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityFBXExporter;
+
 
 // Copy meshes from children into the parent's Mesh.
 // CombineInstance stores the list of meshes.  These are combined
@@ -11,26 +13,29 @@ public class MeshCombine : MonoBehaviour
 {
     public void CombineMeshesAndSave()
     {
-        MeshFilter[] meshFilters = GetComponentsInChildren<MeshFilter>();
-        CombineInstance[] combine = new CombineInstance[meshFilters.Length];
+        // MeshFilter[] meshFilters = GetComponentsInChildren<MeshFilter>();
+        // CombineInstance[] combine = new CombineInstance[meshFilters.Length];
 
-        int i = 0;
-        while (i < meshFilters.Length)
-        {
-            combine[i].mesh = meshFilters[i].sharedMesh;
-            combine[i].transform = meshFilters[i].transform.localToWorldMatrix;
+        // int i = 0;
+        // while (i < meshFilters.Length)
+        // {
+        //     combine[i].mesh = meshFilters[i].sharedMesh;
+        //     combine[i].transform = meshFilters[i].transform.localToWorldMatrix;
 
-            i++;
-        }
+        //     i++;
+        // }
+        // transform.GetComponent<MeshFilter>().mesh = new Mesh();
+        // transform.GetComponent<MeshFilter>().mesh.CombineMeshes(combine);
+        // transform.gameObject.SetActive(true);
+
+        // MeshFilter mesh = transform.GetComponent<MeshFilter>();
+        // // string path = Application.persistentDataPath + "/Export.fbx";
+
+
         transform.GetComponent<MeshFilter>().mesh = new Mesh();
-        transform.GetComponent<MeshFilter>().mesh.CombineMeshes(combine);
-        transform.gameObject.SetActive(true);
 
-        MeshFilter mesh = transform.GetComponent<MeshFilter>();
-        string path = Application.persistentDataPath + "/Export.obj";
-        ExportPLS.MeshToFile(mesh,path);
-
-        transform.GetComponent<MeshFilter>().mesh = new Mesh();
+        string path = Application.persistentDataPath + "/Export.fbx";
+        FBXExporter.ExportGameObjToFBX(gameObject, path, true, true);
         
     }
 }
